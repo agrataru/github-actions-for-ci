@@ -26,7 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - uses: actions/upload-artifact@master
-      with:
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
         name: webpack artifacts
         path: public/
     - run: npm ci
